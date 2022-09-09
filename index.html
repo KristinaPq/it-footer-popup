@@ -1,0 +1,102 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta name="author" content="Kristina">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>dz_footer_popup</title>
+        <link rel="icon" href="ic.png" type="image/x-icon">
+        <style>
+        html, body 
+        {
+        height: 100%; /*высота документа и тела*/
+        }
+        .header 
+        {
+        height:120px;
+        background-color: #7f25a5; /*высота и фон*/
+        border: 3px solid #000000;
+        }
+        .content 
+        {
+        min-height: 100%;
+        position:relative;
+        }
+        .footer 
+        {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        border: 3px solid #000000;
+        background:  #5555ff;
+        text-align: center;
+        color: aliceblue;
+        }
+        /*
+        подвал мы поместили в состав основного элемента. 
+        Контейнеру мы задали относительное позиционирование, 
+        а для футера – абсолютное. Подвал мы закрепили в самом низу контейнера,
+        установив его положение слева и сверху в 0.
+        */          
+        #okno 
+        {
+        width: 500px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 10px;
+        color: #0000cc;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        }
+        #okno:target 
+        {
+        display: block;
+        }
+        .close 
+        {
+        display: inline-block;
+        border: 1px solid #000000;
+        color: #ffffff;
+        padding: 30px 30px;
+        margin: 70px;
+        text-decoration: none;
+        background: #0b0b0b;
+        font-size: 14pt;
+        cursor:pointer;
+        }
+        .close:hover 
+        {
+        background:  #0000cc;
+        }   
+        </style>
+      </head>
+     
+      <body>
+        <div class="content">
+          <div class="header"></div>
+            <div id="okno">Всплывающее окно!<br> <a href="#" class="close">Закрыть окно</a>
+          </div>
+              <div class="footer"><a href="#okno">Вызвать всплывающее окно</a></div>
+        </div>
+      </body>
+    </html>
+    <!-- Первым шагом создания всплывающего окна является создание элемента <div> (или любого другого элемента) и его оформление:-->
+      <!--Этот <div> и будет использоваться в качестве всплывающего окна. 
+        Теперь мы его скрываем с помощью значения none свойства display и добавляем ссылку,
+         при нажатии на которую будет появляться всплывающее окно:-->
+    <!--Используя псевдо-класс :target мы выбираем и применяем стили к элементу, 
+    которому был осуществлён переход. Таким образом после перехода по ссылки значение
+    свойства display элемента <div> сменится с none на block.
+    Теперь надо расположить <div> посередине страницы, чтобы он стал 
+    похож на всплывающее окно. Делаем его абсолютно позиционированным
+    и центрируем его по вертикали и горизонтали:-->
+    
